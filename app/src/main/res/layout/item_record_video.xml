@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_10"
+    android:paddingEnd="@dimen/dp_0"
+    android:id="@+id/cl_video_root"
+    android:paddingTop="@dimen/dp_0">
+
+    <ImageView
+        android:id="@+id/img_guide"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_80"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/icon_camera_online" />
+
+    <TextView
+        android:id="@+id/tx_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_gray"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="@+id/img_guide"
+        app:layout_constraintStart_toStartOf="@+id/img_guide"
+        app:layout_constraintTop_toBottomOf="@+id/img_guide"
+        tools:text="TextView" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_weather"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_20">
+
+    <TextView
+        android:id="@+id/tx_basic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/activity_live_environment"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tx_address"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginStart="@dimen/dp_10"
+        android:drawableLeft="@mipmap/icon_address"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text=""
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_basic"
+        app:layout_constraintStart_toEndOf="@+id/tx_basic" />
+
+    <TextView
+        android:id="@+id/tx_environment_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_10"
+        android:drawableLeft="@mipmap/icon_live_vironment_temp"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="环境温度："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_basic"
+        app:layout_constraintTop_toBottomOf="@+id/tx_basic" />
+
+    <TextView
+        android:id="@+id/tx_hum_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_40"
+        android:drawableLeft="@mipmap/icon_live_hum_temp"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="体感温度："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_environment_temp"
+        app:layout_constraintStart_toEndOf="@+id/tx_environment_temp" />
+
+    <TextView
+        android:id="@+id/tx_see_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_see_area"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="能见度："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_cond"
+        app:layout_constraintStart_toStartOf="@+id/tx_hum_temp" />
+
+    <TextView
+        android:id="@+id/tx_cond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:drawableLeft="@mipmap/icon_live_state"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="天气状况："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_environment_temp"
+        app:layout_constraintTop_toBottomOf="@+id/tx_environment_temp" />
+
+    <TextView
+        android:id="@+id/tx_wind_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:drawableLeft="@mipmap/icon_live_wind_sped"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="风速："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_cond"
+        app:layout_constraintTop_toBottomOf="@+id/tx_cond" />
+
+    <TextView
+        android:id="@+id/tx_wind_dec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_wind_dec"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="风向："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_wind_speed"
+        app:layout_constraintStart_toStartOf="@+id/tx_see_area" />
+
+    <TextView
+        android:id="@+id/tx_wind_power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:drawableLeft="@mipmap/icon_live_wind_power"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="风力"
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_wind_speed"
+        app:layout_constraintTop_toBottomOf="@+id/tx_wind_speed" />
+
+    <TextView
+        android:id="@+id/tx_rain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_rain"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="降雨量："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_wind_power"
+        app:layout_constraintStart_toStartOf="@+id/tx_wind_dec" />
+
+    <TextView
+        android:id="@+id/tx_hum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:drawableLeft="@mipmap/icon_live_wet"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="湿度："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_wind_power"
+        app:layout_constraintTop_toBottomOf="@+id/tx_wind_power" />
+
+    <TextView
+        android:id="@+id/tx_pres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_press"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="大气压："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_hum"
+        app:layout_constraintStart_toStartOf="@+id/tx_rain" />
+
+    <TextView
+        android:id="@+id/tx_aqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_10"
+        android:text="AQI指数"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintStart_toStartOf="@+id/tx_hum"
+        app:layout_constraintTop_toBottomOf="@+id/tx_hum" />
+
+    <TextView
+        android:id="@+id/tx_aqi_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_air_quality"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:paddingTop="@dimen/dp_10"
+        android:text="空气质量指数："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_air_aqi"
+        app:layout_constraintTop_toBottomOf="@+id/tx_air_aqi" />
+
+    <TextView
+        android:id="@+id/tx_air_aqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_air"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:paddingTop="@dimen/dp_10"
+        android:text="空气质量："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_aqi"
+        app:layout_constraintTop_toBottomOf="@+id/tx_aqi" />
+
+    <TextView
+        android:id="@+id/tx_no2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_no2"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="二氧化氮："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_aqi_value"
+        app:layout_constraintStart_toStartOf="@+id/tx_pres" />
+
+    <TextView
+        android:id="@+id/tx_so2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_so2"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:paddingTop="@dimen/dp_10"
+        android:text="二氧化硫："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_aqi_value"
+        app:layout_constraintTop_toBottomOf="@+id/tx_aqi_value" />
+
+    <TextView
+        android:id="@+id/tx_co"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_co"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="一氧化碳："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_so2"
+        app:layout_constraintStart_toStartOf="@+id/tx_no2" />
+
+    <TextView
+        android:id="@+id/tx_pm2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_pm"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:paddingTop="@dimen/dp_10"
+        android:text="PM2.5："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_so2"
+        app:layout_constraintTop_toBottomOf="@+id/tx_so2" />
+
+    <TextView
+        android:id="@+id/tx_o3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_live_o3"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="bottom"
+        android:text="臭氧："
+        android:textColor="@color/color_black_gray"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_pm2"
+        app:layout_constraintStart_toStartOf="@+id/tx_co" />
+</android.support.constraint.ConstraintLayout>

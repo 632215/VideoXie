@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dp_20">
+
+    <EditText
+        android:id="@+id/et_user_id"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_25"
+        android:background="@null"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:drawableLeft="@mipmap/icon_user_id"
+        android:drawablePadding="@dimen/dp_5"
+        android:hint="@string/activity_register_user_id_tips"
+        android:inputType="textEmailAddress"
+        android:maxLength="11"
+        android:singleLine="true"
+        android:textColorHint="@color/activity_login_line"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tx_line_id"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/activity_login_line"
+        app:layout_constraintEnd_toEndOf="@+id/et_user_id"
+        app:layout_constraintStart_toStartOf="@+id/et_user_id"
+        app:layout_constraintTop_toBottomOf="@+id/et_user_id" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@null"
+        android:drawableLeft="@mipmap/icon_telphone"
+        android:drawablePadding="@dimen/dp_5"
+        android:hint="@string/activity_register_phone_tips"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:singleLine="true"
+        android:textColorHint="@color/activity_login_line"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="@+id/tx_line_id"
+        app:layout_constraintStart_toStartOf="@+id/tx_line_id"
+        app:layout_constraintTop_toBottomOf="@+id/tx_line_id"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tx_line_phone"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/activity_login_line"
+        app:layout_constraintEnd_toEndOf="@+id/et_phone"
+        app:layout_constraintStart_toStartOf="@+id/et_phone"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@null"
+        android:drawableLeft="@mipmap/icon_name"
+        android:drawablePadding="@dimen/dp_5"
+        android:hint="@string/activity_register_user_name_tips"
+        android:maxLength="11"
+        android:singleLine="true"
+        android:textColorHint="@color/activity_login_line"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="@+id/tx_line_phone"
+        app:layout_constraintStart_toStartOf="@+id/tx_line_phone"
+        app:layout_constraintTop_toBottomOf="@+id/tx_line_phone"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tx_line_name"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/activity_login_line"
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+    <TextView
+        android:id="@+id/tx_department"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@null"
+        android:drawableLeft="@mipmap/icon_department"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableRight="@mipmap/icon_more"
+        android:gravity="center_vertical"
+        android:hint="@string/activity_register_department_tips"
+        android:maxLength="11"
+        android:singleLine="true"
+        android:textColorHint="@color/activity_login_line"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="@+id/tx_line_name"
+        app:layout_constraintStart_toStartOf="@+id/tx_line_name"
+        app:layout_constraintTop_toBottomOf="@+id/tx_line_name"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tx_line_department"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/activity_login_line"
+        app:layout_constraintEnd_toEndOf="@+id/tx_department"
+        app:layout_constraintStart_toStartOf="@+id/tx_department"
+        app:layout_constraintTop_toBottomOf="@+id/tx_department" />
+
+    <EditText
+        android:id="@+id/et_position"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@null"
+        android:drawableLeft="@mipmap/icon_position"
+        android:drawablePadding="@dimen/dp_5"
+        android:hint="@string/activity_register_power_tips"
+        android:maxLength="11"
+        android:singleLine="true"
+        android:textColorHint="@color/activity_login_line"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="@+id/tx_line_department"
+        app:layout_constraintStart_toStartOf="@+id/tx_line_department"
+        app:layout_constraintTop_toBottomOf="@+id/tx_line_department"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tx_line_position"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/activity_login_line"
+        app:layout_constraintEnd_toEndOf="@+id/et_position"
+        app:layout_constraintStart_toStartOf="@+id/et_position"
+        app:layout_constraintTop_toBottomOf="@+id/et_position" />
+
+    <RadioGroup
+        android:id="@+id/rg_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/tx_line_position"
+        app:layout_constraintTop_toBottomOf="@+id/tx_line_position">
+
+        <RadioButton
+            android:id="@+id/rb_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_16" />
+
+        <RadioButton
+            android:id="@+id/rb_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="女"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_16" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_pwd"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@null"
+        android:drawableLeft="@mipmap/icon_pwd"
+        android:drawablePadding="@dimen/dp_5"
+        android:hint="@string/activity_register_pwd_tips"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textColorHint="@color/activity_login_line"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/rg_sex"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tx_line_pwd"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/activity_login_line"
+        app:layout_constraintEnd_toEndOf="@+id/et_pwd"
+        app:layout_constraintStart_toStartOf="@+id/et_pwd"
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd" />
+
+    <EditText
+        android:id="@+id/et_pwd_confirm"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@null"
+        android:drawableLeft="@mipmap/icon_pwd"
+        android:drawablePadding="@dimen/dp_5"
+        android:hint="@string/activity_register_pwd_confirm_tips"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textColorHint="@color/activity_login_line"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="@+id/et_pwd"
+        app:layout_constraintStart_toStartOf="@+id/et_pwd"
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tx_line_pwd_confirm"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/activity_login_line"
+        app:layout_constraintEnd_toEndOf="@+id/et_pwd_confirm"
+        app:layout_constraintStart_toStartOf="@+id/et_pwd_confirm"
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd_confirm" />
+
+    <TextView
+        android:id="@+id/tx_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_40"
+        android:background="@mipmap/icon_login_login"
+        android:gravity="center"
+        android:text="@string/activity_register_sure"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toTopOf="@+id/tx_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd_confirm" />
+
+    <ImageView
+        android:id="@+id/image_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/dp_4"
+        android:src="@mipmap/icon_register_selected"
+        app:layout_constraintBottom_toBottomOf="@+id/tx_login_deal"
+        app:layout_constraintEnd_toStartOf="@+id/tx_login_deal"
+        app:layout_constraintTop_toTopOf="@+id/tx_login_deal" />
+
+    <TextView
+        android:id="@+id/tx_login_deal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_above="@+id/tx_out_look"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:text="@string/activity_register_user_protocol"
+        android:textColor="@color/color_main"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/tx_out_look"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tx_out_look"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:text="@string/activity_register_service_provider"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/tx_copy_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tx_copy_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:text="@string/activity_register_copyright"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

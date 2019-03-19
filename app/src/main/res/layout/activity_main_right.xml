@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <FrameLayout
+        android:id="@+id/fl_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_line" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_above="@+id/rg_main" />
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black_overlay"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10">
+
+        <com.weis.videoxie.moudle.custom.CustomRadioButton
+            android:id="@+id/rb_device"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/dp_4"
+            android:drawableTop="@drawable/select_main_device"
+            android:gravity="center"
+            android:text="@string/activity_main_device"
+            android:textColor="@drawable/select_main_text"
+            android:textSize="@dimen/sp_10" />
+
+        <com.weis.videoxie.moudle.custom.CustomRadioButton
+            android:id="@+id/rb_patrol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/dp_4"
+            android:drawableTop="@drawable/select_main_patrol"
+            android:gravity="center"
+            android:text="@string/activity_main_patrol"
+            android:textColor="@drawable/select_main_text"
+            android:textSize="@dimen/sp_10" />
+
+        <com.weis.videoxie.moudle.custom.CustomRadioButton
+            android:id="@+id/rb_police"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/dp_4"
+            android:drawableTop="@drawable/select_main_police"
+            android:gravity="center"
+            android:text="@string/activity_main_police"
+            android:textColor="@drawable/select_main_text"
+            android:textSize="@dimen/sp_10" />
+
+    </RadioGroup>
+</RelativeLayout>

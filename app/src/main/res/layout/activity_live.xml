@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_live"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tx_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/dp_6"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_live"
+        app:layout_constraintEnd_toEndOf="@+id/rv_live"
+        app:layout_constraintStart_toStartOf="@+id/rv_live"
+        app:layout_constraintTop_toTopOf="@+id/rv_live" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_control"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:background="@color/color_black"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingEnd="@dimen/dp_18"
+        android:paddingStart="@dimen/dp_18"
+        android:paddingTop="@dimen/dp_8"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_live"
+        app:layout_constraintEnd_toEndOf="@+id/rv_live"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rv_live">
+
+        <CheckBox
+            android:id="@+id/cb_play"
+            style="@style/CheckBoxThemePlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_control"
+            app:layout_constraintEnd_toStartOf="@+id/cb_voice"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cl_control" />
+
+        <CheckBox
+            android:id="@+id/cb_voice"
+            style="@style/CheckBoxThemeVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_play"
+            app:layout_constraintEnd_toStartOf="@+id/tx_definition"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cb_play"
+            app:layout_constraintTop_toTopOf="@+id/cb_play" />
+
+        <TextView
+            android:id="@+id/tx_definition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_live_definition_standard"
+            android:textColor="@color/activity_live_gray"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_voice"
+            app:layout_constraintEnd_toStartOf="@+id/img_pre"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cb_voice"
+            app:layout_constraintTop_toTopOf="@+id/cb_voice" />
+
+        <ImageView
+            android:id="@+id/img_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_pre"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tx_definition"
+            app:layout_constraintEnd_toStartOf="@+id/img_next"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tx_definition"
+            app:layout_constraintTop_toTopOf="@+id/tx_definition" />
+
+        <ImageView
+            android:id="@+id/img_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_next"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/img_pre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/img_pre"
+            app:layout_constraintTop_toTopOf="@+id/img_pre" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tx_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_4"
+        android:singleLine="true"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_live"
+        tools:text="沙发沙发" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_operate"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx_device_name">
+
+        <TextView
+            android:id="@+id/tx_control"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/shape_margin_bottom_1"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="云控"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <TextView
+            android:id="@+id/tx_screenshots"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/shape_margin_bottom_1"
+            android:gravity="center"
+            android:text="截屏"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tx_control"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <TextView
+            android:id="@+id/tx_talk"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/shape_margin_bottom_1"
+            android:gravity="center"
+            android:text="对讲"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tx_screenshots"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <TextView
+            android:id="@+id/tx_recording"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/shape_margin_bottom_1"
+            android:gravity="center"
+            android:text="录制"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tx_talk"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <ImageView
+            android:id="@+id/img_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:src="@drawable/animation_recording"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tx_recording"
+            app:layout_constraintTop_toTopOf="@+id/tx_recording" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_cloud_control"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_margin_bottom_1"
+        android:padding="@dimen/dp_10"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_operate">
+
+        <ImageButton
+            android:id="@+id/ib_control_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/select_control_left"
+            app:layout_constraintBottom_toBottomOf="@+id/rb_control_center"
+            app:layout_constraintEnd_toStartOf="@+id/rb_control_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rb_control_center" />
+
+        <RadioButton
+            android:id="@+id/rb_control_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/select_control_center"
+            android:button="@null"
+            app:layout_constraintBottom_toTopOf="@+id/ib_control_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_control_top" />
+
+        <ImageButton
+            android:id="@+id/ib_control_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/select_control_right"
+            app:layout_constraintBottom_toBottomOf="@+id/rb_control_center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rb_control_center"
+            app:layout_constraintTop_toTopOf="@+id/rb_control_center" />
+
+        <ImageButton
+            android:id="@+id/ib_control_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/select_control_top"
+            android:paddingBottom="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ib_control_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/select_control_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ib_control_top"
+            app:layout_constraintStart_toStartOf="@+id/ib_control_top" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_cloud_control"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_weather"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/dp_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tx_basic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/activity_live_environment"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tx_address"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_0"
+                android:layout_marginStart="@dimen/dp_10"
+                android:drawableLeft="@mipmap/icon_address"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text=""
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_basic"
+                app:layout_constraintStart_toEndOf="@+id/tx_basic" />
+
+            <TextView
+                android:id="@+id/tx_environment_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_0"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableLeft="@mipmap/icon_live_vironment_temp"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="环境温度："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_basic"
+                app:layout_constraintTop_toBottomOf="@+id/tx_basic" />
+
+            <TextView
+                android:id="@+id/tx_hum_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_40"
+                android:drawableLeft="@mipmap/icon_live_hum_temp"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="体感温度："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_environment_temp"
+                app:layout_constraintStart_toEndOf="@+id/tx_environment_temp" />
+
+            <TextView
+                android:id="@+id/tx_see_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_see_area"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="能见度："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_cond"
+                app:layout_constraintStart_toStartOf="@+id/tx_hum_temp" />
+
+            <TextView
+                android:id="@+id/tx_cond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableLeft="@mipmap/icon_live_state"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="天气状况："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_environment_temp"
+                app:layout_constraintTop_toBottomOf="@+id/tx_environment_temp" />
+
+            <TextView
+                android:id="@+id/tx_wind_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableLeft="@mipmap/icon_live_wind_sped"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="风速："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_cond"
+                app:layout_constraintTop_toBottomOf="@+id/tx_cond" />
+
+            <TextView
+                android:id="@+id/tx_wind_dec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_wind_dec"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="风向："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_wind_speed"
+                app:layout_constraintStart_toStartOf="@+id/tx_see_area" />
+
+            <TextView
+                android:id="@+id/tx_wind_power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableLeft="@mipmap/icon_live_wind_power"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="风力"
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_wind_speed"
+                app:layout_constraintTop_toBottomOf="@+id/tx_wind_speed" />
+
+            <TextView
+                android:id="@+id/tx_rain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_rain"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="降雨量："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_wind_power"
+                app:layout_constraintStart_toStartOf="@+id/tx_wind_dec" />
+
+            <TextView
+                android:id="@+id/tx_hum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableLeft="@mipmap/icon_live_wet"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="湿度："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_wind_power"
+                app:layout_constraintTop_toBottomOf="@+id/tx_wind_power" />
+
+            <TextView
+                android:id="@+id/tx_pres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_press"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="大气压："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_hum"
+                app:layout_constraintStart_toStartOf="@+id/tx_rain" />
+
+            <TextView
+                android:id="@+id/tx_aqi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_10"
+                android:text="AQI指数"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintStart_toStartOf="@+id/tx_hum"
+                app:layout_constraintTop_toBottomOf="@+id/tx_hum" />
+
+            <TextView
+                android:id="@+id/tx_aqi_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_air_quality"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:paddingTop="@dimen/dp_10"
+                android:text="空气质量指数："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_air_aqi"
+                app:layout_constraintTop_toBottomOf="@+id/tx_air_aqi" />
+
+            <TextView
+                android:id="@+id/tx_air_aqi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_air"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:paddingTop="@dimen/dp_10"
+                android:text="空气质量："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_aqi"
+                app:layout_constraintTop_toBottomOf="@+id/tx_aqi" />
+
+            <TextView
+                android:id="@+id/tx_no2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_no2"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="二氧化氮："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_aqi_value"
+                app:layout_constraintStart_toStartOf="@+id/tx_pres" />
+
+            <TextView
+                android:id="@+id/tx_so2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_so2"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:paddingTop="@dimen/dp_10"
+                android:text="二氧化硫："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_aqi_value"
+                app:layout_constraintTop_toBottomOf="@+id/tx_aqi_value" />
+
+            <TextView
+                android:id="@+id/tx_co"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_co"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="一氧化碳："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_so2"
+                app:layout_constraintStart_toStartOf="@+id/tx_no2" />
+
+            <TextView
+                android:id="@+id/tx_pm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_pm"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:paddingTop="@dimen/dp_10"
+                android:text="PM2.5："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="@+id/tx_so2"
+                app:layout_constraintTop_toBottomOf="@+id/tx_so2" />
+
+            <TextView
+                android:id="@+id/tx_o3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_live_o3"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="bottom"
+                android:text="臭氧："
+                android:textColor="@color/color_black_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/tx_pm2"
+                app:layout_constraintStart_toStartOf="@+id/tx_co" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tx_current_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/activity_device_current_name"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tx_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/activity_device_name"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx_current_name" />
+
+    <TextView
+        android:id="@+id/tx_commit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/shape_blue_radio"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_40"
+        android:paddingStart="@dimen/dp_40"
+        android:paddingTop="@dimen/dp_10"
+        android:text="@string/activity_device_commit"
+        android:enabled="true"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="text"
+        android:tooltipText="@string/activity_device_play_real"
+        app:layout_constraintStart_toStartOf="@+id/tx_name"
+        app:layout_constraintTop_toBottomOf="@+id/tx_name" />
+
+    <TextView
+        android:id="@+id/tx_line_name"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@color/activity_login_line"
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+    <TextView
+        android:id="@+id/tx_loacation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="经纬度信息："
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/tx_line_name" />
+
+    <TextView
+        android:id="@+id/tx_location_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@+id/tx_loacation"
+        app:layout_constraintTop_toBottomOf="@+id/tx_loacation"
+        tools:text="asdadada" />
+
+    <TextView
+        android:id="@+id/tx_get_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@drawable/shape_blue_radio"
+        android:padding="@dimen/dp_10"
+        android:text="获取经纬度"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tx_loacation" />
+</android.support.constraint.ConstraintLayout>

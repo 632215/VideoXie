@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_record_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.weis.videoxie.moudle.custom.LoadingTextView
+        android:id="@+id/loading_tx_view"
+        style="@style/LoadingTextView_Percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/surface_view"
+        app:layout_constraintEnd_toEndOf="@+id/surface_view"
+        app:layout_constraintStart_toStartOf="@+id/surface_view"
+        app:layout_constraintTop_toTopOf="@+id/surface_view" />
+
+    <TextView
+        android:id="@+id/tx_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/dp_6"
+        android:gravity="center"
+        android:text="@string/activity_record_state"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/surface_view"
+        app:layout_constraintEnd_toEndOf="@+id/surface_view"
+        app:layout_constraintStart_toStartOf="@+id/surface_view"
+        app:layout_constraintTop_toTopOf="@+id/surface_view" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_control"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:background="@color/color_black"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingEnd="@dimen/dp_18"
+        android:paddingStart="@dimen/dp_18"
+        android:paddingTop="@dimen/dp_8"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/surface_view"
+        app:layout_constraintEnd_toEndOf="@+id/surface_view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/surface_view">
+
+        <CheckBox
+            android:id="@+id/cb_play"
+            style="@style/CheckBoxThemePlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_control"
+            app:layout_constraintEnd_toStartOf="@+id/cb_voice"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cl_control" />
+
+        <CheckBox
+            android:id="@+id/cb_voice"
+            style="@style/CheckBoxThemeVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_play"
+            app:layout_constraintEnd_toStartOf="@+id/tx_speed"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cb_play"
+            app:layout_constraintTop_toTopOf="@+id/cb_play" />
+
+        <TextView
+            android:id="@+id/tx_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_record_speed"
+            android:textColor="@color/activity_live_gray"
+            android:textSize="@dimen/sp_16"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_voice"
+            app:layout_constraintEnd_toStartOf="@+id/cb_size"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cb_voice"
+            app:layout_constraintTop_toTopOf="@+id/cb_voice" />
+
+        <CheckBox
+            android:id="@+id/cb_size"
+            style="@style/CheckBoxThemeSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tx_speed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tx_speed"
+            app:layout_constraintTop_toTopOf="@+id/tx_speed" />
+    </android.support.constraint.ConstraintLayout>
+
+    <com.weis.videoxie.moudle.custom.LoadingLayout
+        android:id="@+id/loading_layout"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surface_view">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_record"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </com.weis.videoxie.moudle.custom.LoadingLayout>
+</android.support.constraint.ConstraintLayout>
